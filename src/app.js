@@ -38,7 +38,7 @@ ajax(
 
     // Extract data
     //var location = data.name;
-    var temperature = (data.temp/1000) + "C";
+    var temperature = (data.temp/1000);
 
     // Always upper-case first letter of description
     //var description = data.weather[0].description;
@@ -54,8 +54,10 @@ ajax(
         state = "cold";
     }
 
+    var tmp = temperature + "C";
+    
     // Show to user
-    card.subtitle(temperature);
+    card.subtitle(tmp);
     card.body("Your coffee is " + state);
   },
   function(error) {
